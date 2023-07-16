@@ -1,0 +1,18 @@
+<div class="search-box">
+  <button class="btn-search" (click)="setSearchedDrinks()">Search</button>
+  <input
+    type="text"
+    class="input-search"
+    placeholder="Type to Search..."
+    [(ngModel)]="searchedDrink"
+    (keyup.enter)="setSearchedDrinks()"
+  />
+
+  <button class="btn-search" (click)="clearSearch()">Clear</button>
+</div>
+
+<div>
+  <div *ngFor="let drink of drinks">
+    <app-card [drink]="drink"></app-card>
+  </div>
+</div>
